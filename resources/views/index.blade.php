@@ -34,4 +34,8 @@
             </div>
         </div>
     </div>
+    <select id="voice-names"></select>
+    <br />
+    <input id="rate" type="range" min="0" max="2" step="0.25" value="1"> (speed)
+    <br />
 </x-app-layout>
