@@ -1,6 +1,7 @@
 const text = document.querySelector('#text')
 const voiceSelect = document.querySelector('#voice-select')
 const speakBtn = document.querySelector('#speak-btn')
+const rateInput = document.querySelector('#id_speed')
 
 // selectタグの中身を声の名前が入ったoptionタグで埋める
 function appendVoices() {
@@ -10,7 +11,7 @@ function appendVoices() {
     voiceSelect.innerHTML = ''
     voices.forEach(voice => { //　アロー関数 (ES6)
         // 日本語と英語以外の声は選択肢に追加しない。
-        if (!voice.lang.match('ja|en-US')) return
+        if (!voice.lang.match('en-US')) return
         const option = document.createElement('option')
         option.value = voice.name
         option.text = `${voice.name} (${voice.lang})` //　テンプレートリテラル (ES6)
@@ -34,6 +35,8 @@ speakBtn.addEventListener('click', function () {
     uttr.voice = speechSynthesis
         .getVoices()
         .filter(voice => voice.name === voiceSelect.value)[0]
+    const rate = parseFloat(rateInput.value);
+    uttr.rate = rate
     // 発言を再生 (発言キュー発言に追加)
     speechSynthesis.speak(uttr)
 })

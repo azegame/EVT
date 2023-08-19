@@ -25,9 +25,10 @@
                                     </div>
                                     <div class="p-2 w-full">
                                         <div class="flex justify-center space-x-4">
-                                            <button id="speak-btn" class="flex text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">再生</button>
+                                            <button id="speak-btn" type="button" class="flex text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">再生</button>
                                             <button class="flex text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">保存する</button>
                                         </div>
+                                        <input type="range" id="id_speed" name="speed" class="col-7 offset-1" step="0.1" min="0.1" max="3.0" value="1.0" required>
                                         <select id="voice-select"></select>
                                         <div class="mt-7"></div>
                                     </div>
