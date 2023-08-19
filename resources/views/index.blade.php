@@ -28,6 +28,7 @@
                                             <button id="speak-btn" class="flex text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">再生</button>
                                             <button class="flex text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">保存する</button>
                                         </div>
+                                        <select id="voice-select"></select>
                                         <div class="mt-7"></div>
                                     </div>
                                 </div>
