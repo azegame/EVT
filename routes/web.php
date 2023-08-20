@@ -19,8 +19,9 @@ use Illuminate\Support\Facades\Route;
 //    return view('welcome');
 //});
 
+
 Route::get('/', [TextController::class, 'index'])->name('index');
-Route::post('/', [TextController::class, 'store'])->name('store');
+Route::post('/', [TextController::class, 'store'])->middleware(['auth', 'verified'])->name('store');
 
 
 Route::get('/dashboard', function () {
