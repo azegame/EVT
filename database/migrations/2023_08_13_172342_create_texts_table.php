@@ -12,7 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('texts', function (Blueprint $table) {
-            $table->id();
+            $table->id('text_id');
+            $table->integer('user_id');
             $table->string('text', 200);
             $table->timestamps();
         });
