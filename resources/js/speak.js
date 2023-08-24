@@ -30,7 +30,12 @@ speechSynthesis.onvoiceschanged = e => {
     appendVoices()
 }
 
+const speedLabel = document.getElementById('speedLabel');
 
+// input要素の値が変更されたときに速度ラベルを更新するイベントリスナーを追加
+rateInput.addEventListener('input', () => {
+    speedLabel.textContent = `(${rateInput.value})`;
+});
 
 speakBtn.addEventListener('click', (e) => {
     // 発言を作成
