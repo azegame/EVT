@@ -24,7 +24,7 @@
                                         </div>
                                     </div>
                                     <div class="p-2 w-full text-center">
-                                        <label for="vol" class="col-3 font-weight-bold text-center">
+                                        <label for="vol" class="col-3 font-weight-bold text-center dark:text-gray-200">
                                             速度:
                                             <span id="speedLabel">({{ old('speed', '1.0') }})</span></label>
                                         <input type="range" id="id_speed" name="speed" class="col-7 offset-1" step="0.1" min="0.1" max="3.0" value="1.0" required>
