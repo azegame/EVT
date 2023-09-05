@@ -2,6 +2,7 @@ const text = document.querySelector('#text')
 const voiceSelect = document.querySelector('#voice-select')
 const speakBtn = document.querySelector('#speak-btn')
 const rateInput = document.querySelector('#id_speed')
+const speedLabel = document.getElementById('speedLabel');
 
 // selectタグの中身を声の名前が入ったoptionタグで埋める
 const appendVoices = () => {
@@ -26,11 +27,8 @@ appendVoices()
 // ② 使える声が追加されたときに着火するイベントハンドラ。
 // Chrome は非同期に(一個ずつ)声を読み込むため必要。
 speechSynthesis.onvoiceschanged = e => {
-    console.log("aaaa");
     appendVoices()
 }
-
-const speedLabel = document.getElementById('speedLabel');
 
 // input要素の値が変更されたときに速度ラベルを更新するイベントリスナーを追加
 rateInput.addEventListener('input', () => {
@@ -46,7 +44,7 @@ speakBtn.addEventListener('click', (e) => {
         .filter(voice => voice.name === voiceSelect.value)[0]
     const rate = parseFloat(rateInput.value);
     uttr.rate = rate
-    // 発言を再生 (発言キュー発言に追加)
-    console.log(e);
+
+    speechSynthesis.cancel();
     speechSynthesis.speak(uttr)
 })
