@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\Models\Text;
 
 class TextController extends Controller
@@ -15,6 +16,7 @@ class TextController extends Controller
     public function store(Request $request)
     {
         Text::create([
+            'user_id' =>  $request->user()->id,
             'text' => $request->text,
         ]);
 

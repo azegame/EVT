@@ -11,7 +11,7 @@
                 <div class="p-6 text-gray-900 dark:text-gray-200">
                 </div>
                 <section class="text-gray-600 body-font relative">
-                    <form method="post" action="{{ route('store') }}">
+                    <form method="post" action="{{ route('texts.store') }}">
                         @csrf
                         <div class="container px-5 mx-auto">
                             <div class="lg:w-1/2 md:w-2/3 mx-auto">
