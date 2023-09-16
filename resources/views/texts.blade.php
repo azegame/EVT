@@ -18,12 +18,16 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach($texts as $text)
-                                <tr>
-                                    <td class="border-t-2 border-gray-200 px-4 py-3">{{ $text->text }}</td>
-                                    <td class="border-t-2 border-gray-200 px-4 py-3">{{ $text->created_at }}</td>
-                                </tr>
-                                @endforeach
+                                <ul>
+                                    @foreach($texts as $text)
+                                    <li class="border-t-2 border-gray-200 px-4 py-3 mb-2">
+                                        <strong>登録日：</strong> {{ $text->created_at }}<br>
+                                        <strong>内容：</strong> {{ $text->text }}
+                                    </li>
+                                    @endforeach
+                                </ul>
+
+
                             </tbody>
                         </table>
                     </div>
