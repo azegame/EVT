@@ -19,7 +19,7 @@ class TextController extends Controller
             'text' => $request->text,
         ]);
 
-        return view('index', ['texts' => Text::where('user_id', $request->user()->id)->get()]);
+        return view('afterlogin', ['texts' => Text::where('user_id', $request->user()->id)->get()]);
     }
 
     public function show(Request $request)
