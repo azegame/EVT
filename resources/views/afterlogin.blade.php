@@ -24,19 +24,16 @@
                         <span class="ml-3">Dashboard</span>
                     </a>
                 </li>
-
                 <li>
                     @foreach($texts as $text)
                     <a href="#" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
-                        <span class="flex-1 ml-3 whitespace-nowrap">
+                        <span class="flex-1 ml-3 whitespace-nowrap text">
                             {{ $text->text }}
                             {{ $text->created_at }}
                         </span>
                     </a>
                     @endforeach
                 </li>
-                <li>
-
             </ul>
         </div>
     </aside>
