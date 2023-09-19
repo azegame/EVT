@@ -1,6 +1,14 @@
-const e = document.getElementsByClassName("text");
-//console.log(e.textContent);
+document.addEventListener('DOMContentLoaded', function () {
+    const links = document.querySelectorAll('.group');
+    console.log(links[0]);
 
-for (var i = 0; e.length; i++) {
-    console.log(e[i].textContent);
-}
+    links.forEach(function (link) {
+        link.addEventListener('click', function (event) {
+            event.preventDefault(); // デフォルトのリンク動作を無効化
+
+            const text = link.querySelector('.text').textContent;
+            console.log(text);
+
+        });
+    });
+});
