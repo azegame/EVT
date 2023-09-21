@@ -18,9 +18,9 @@
                 <li>
                     @foreach($texts as $text)
                     <a href="#" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                        {{ $text->created_at }}
                         <span class="flex-1 ml-3 whitespace-nowrap text">
                             {{ $text->text }}
-                            {{ $text->created_at }}
                         </span>
                     </a>
                     @endforeach

@@ -6,8 +6,12 @@ document.addEventListener('DOMContentLoaded', function () {
         link.addEventListener('click', function (event) {
             event.preventDefault(); // デフォルトのリンク動作を無効化
 
-            const text = link.querySelector('.text').textContent;
+            let text = link.querySelector('.text').textContent;
+            text = text.trim();
             console.log(text);
+
+            const element = document.querySelector('textarea');
+            element.textContent = text;
 
         });
     });
