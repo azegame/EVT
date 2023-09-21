@@ -24,7 +24,14 @@ class TextController extends Controller
 
     public function show(Request $request)
     {
-        return view('afterlogin');
-        //return view('afterlogin', ['texts' => Text::where('user_id', $request->user()->id)->get()]);
+        //return view('afterlogin');
+        return view('afterlogin', ['texts' => Text::where('user_id', $request->user()->id)->get()]);
+    }
+
+    public function destroy(Request $request, $id)
+    {
+        $text = Text::find($id);
+        $text->delete();
+        return view('afterlogin', ['texts' => Text::where('user_id', $request->user()->id)->get()]);
     }
 }

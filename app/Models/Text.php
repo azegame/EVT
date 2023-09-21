@@ -10,6 +10,7 @@ class Text extends Model
     use HasFactory;
 
     protected $fillable = [
+        'text_id',
         'user_id',
         'text',
     ];

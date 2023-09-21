@@ -25,7 +25,7 @@ Route::get('/', [TextController::class, 'index'])->name('index');
 //Route::post('/', [TextController::class, 'store'])->middleware(['auth', 'verified'])->name('store');
 Route::post('/texts', [TextController::class, 'store'])->middleware(['auth', 'verified'])->name('texts.store');
 Route::get('/texts', [TextController::class, 'show'])->middleware(['auth', 'verified'])->name('texts.show');
-
+Route::post('texts/{id}/destroy', [TextController::class, 'destroy'])->middleware(['auth', 'verified'])->name('texts.destroy');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

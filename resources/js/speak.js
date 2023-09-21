@@ -6,10 +6,9 @@ const speedLabel = document.getElementById('speedLabel');
 
 // selectタグの中身を声の名前が入ったoptionタグで埋める
 const appendVoices = () => {
-    // ①　使える声の配列を取得
+    // ① 使える声の配列を取得
     // 配列の中身は SpeechSynthesisVoice オブジェクト
     const voices = speechSynthesis.getVoices()
-    console.log(voices)
     voiceSelect.innerHTML = ''
     voices.forEach((voice) => {
         // 日本語と英語以外の声は選択肢に追加しない。
