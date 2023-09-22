@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 use App\Models\Text;
 
 class TextController extends Controller
@@ -19,7 +20,8 @@ class TextController extends Controller
             'text' => $request->text,
         ]);
 
-        return view('afterlogin', ['texts' => Text::where('user_id', $request->user()->id)->get()]);
+        //return view('afterlogin', ['texts' => Text::where('user_id', $request->user()->id)->get()]);
+        return Redirect::route('texts.show');
     }
 
     public function show(Request $request)
@@ -32,6 +34,7 @@ class TextController extends Controller
     {
         $text = Text::find($id);
         $text->delete();
-        return view('afterlogin', ['texts' => Text::where('user_id', $request->user()->id)->get()]);
+        //return view('afterlogin', ['texts' => Text::where('user_id', $request->user()->id)->get()]);
+        return Redirect::route('texts.show');
     }
 }
