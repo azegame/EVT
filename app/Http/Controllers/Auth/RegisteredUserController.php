@@ -13,6 +13,8 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
 use Illuminate\View\View;
 
+use Illuminate\Support\Facades\Redirect;
+
 class RegisteredUserController extends Controller
 {
     /**
@@ -46,6 +48,7 @@ class RegisteredUserController extends Controller
 
         Auth::login($user);
 
-        return redirect(RouteServiceProvider::HOME);
+        //return redirect(RouteServiceProvider::HOME);
+        return Redirect::route('texts.show');
     }
 }
