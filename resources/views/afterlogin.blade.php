@@ -1,5 +1,4 @@
 <x-app-layout>
-
     <button data-drawer-target="default-sidebar" data-drawer-toggle="default-sidebar" aria-controls="default-sidebar" type="button" class="inline-flex items-center p-2 mt-2 ml-3 text-sm text-gray-500 rounded-lg sm:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600">
         <span class="sr-only">Open sidebar</span>
         <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -8,10 +7,16 @@
     </button>
 
     <aside id="default-sidebar" class="fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0" aria-label="Sidebar">
-        <div class="h-full px-3 py-4 overflow-y-auto bg-gray-50 dark:bg-gray-500">
+        <div class="h-full px-3 py-4 overflow-y-auto bg-gray-50 dark:bg-gray-800">
+            <div class="flex justify-center text-gray-900 dark:text-white mb-5 border border-transparent border-gray-300 dark:border-gray-700">
+                保存したテキスト一覧
+            </div>
             <ul class="space-y-2 font-medium">
                 <li>
                     @foreach($texts as $text)
+                    <span class="flex-1 ml-3 text-sm text-gray-500 dark:text-gray-400 rounded-lg">
+                        {{ $text->created_at }}
+                    </span>
                     <a href="#" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
                         <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="icon-sm" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
                             <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
@@ -62,10 +67,11 @@
                                                 <span id="speedLabel">({{ old('speed', '1.0') }})</span></label>
                                             <input type="range" id="id_speed" name="speed" class="col-7 offset-1" step="0.1" min="0.1" max="2.0" value="1.0" required>
                                             <div class="mb-4"></div>
-                                            <select id="voice-select" class="w-1/2 h-8 text-xs text-black-900"></select>
+                                            <!--<select id="voice-select" class="w-1/2 h-8 text-xs text-black-900"></select>-->
                                             <div class="mt-7"></div>
                                             <div class="flex justify-center space-x-4 mb-4">
                                                 <button id="speak-btn" type="button" class="flex text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">再生</button>
+                                                <button id="stop-btn" type="button" class="flex text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">一時停止</button>
                                                 <button class="flex text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">保存する</button>
                                             </div>
                                         </div>
