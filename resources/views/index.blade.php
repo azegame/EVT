@@ -1,5 +1,4 @@
 <x-app-layout>
-
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg dark:bg-gray-600">
@@ -23,7 +22,7 @@
                                             <span id="speedLabel">({{ old('speed', '1.0') }})</span></label>
                                         <input type="range" id="id_speed" name="speed" class="col-7 offset-1" step="0.1" min="0.1" max="2.0" value="1.0" required>
                                         <div class="mb-4"></div>
-                                        <select id="voice-select" class="w-1/2 h-8 text-xs text-black-900"></select>
+                                        <!--<select id="voice-select" class="w-1/2 h-8 text-xs text-black-900"></select>-->
                                         <div class="mt-7"></div>
                                         <div class="flex justify-center space-x-4 mb-4">
                                             <button id="speak-btn" type="button" class="flex text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">再生</button>
