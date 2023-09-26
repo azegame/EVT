@@ -41,17 +41,46 @@ rateInput.addEventListener('input', () => {
 });
 
 speakBtn.addEventListener('click', (e) => {
-    // 発言を作成
-    const uttr = new SpeechSynthesisUtterance(text.value)
+    let btnText = document.querySelector('#speak-btn').textContent;
+    console.log(btnText);
+    if (btnText === '再生') {
+        const uttr = new SpeechSynthesisUtterance(text.value)
 
-    uttr.voice = speechSynthesis
-        .getVoices()
-        .filter((voice) => voice.name === "Google US English")[0]
-    const rate = parseFloat(rateInput.value);
-    uttr.rate = rate
+        uttr.voice = speechSynthesis
+            .getVoices()
+            .filter((voice) => voice.name === "Google US English")[0]
+        const rate = parseFloat(rateInput.value);
+        uttr.rate = rate
 
-    speechSynthesis.cancel();
-    speechSynthesis.speak(uttr)
+        speechSynthesis.cancel();
+        speechSynthesis.speak(uttr)
+
+        document.querySelector('#speak-btn').innerHTML = '一時停止'
+    }
+    /*
+        let btnText = document.querySelector('#stop-btn').textContent;
+        console.log(btnText);
+        speechSynthesis.resume();
+        document.querySelector('#stop-btn').innerHTML = '一時停止'
+    */
+
+    if (btnText === '一時停止') {
+        speechSynthesis.pause();
+        document.querySelector('#speak-btn').innerHTML = '再開'
+        if (!SpeechSynthesis.pending) {
+            document.querySelector('#speak-btn').innerHTML = '再生'
+        }
+    }
+    if (btnText === '再開') {
+        speechSynthesis.resume();
+        document.querySelector('#speak-btn').innerHTML = '一時停止'
+        if (!SpeechSynthesis.pending) {
+            document.querySelector('#speak-btn').innerHTML = '再生'
+        }
+    }
+
+
+
 })
 
 /*
