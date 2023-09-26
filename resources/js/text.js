@@ -10,8 +10,8 @@ document.addEventListener('DOMContentLoaded', function () {
             text = text.trim();
             console.log(text);
 
-            const element = document.querySelector('textarea');
-            element.textContent = text;
+            let element = document.querySelector('textarea');
+            element.value = text;
 
         });
     });
