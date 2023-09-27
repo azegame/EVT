@@ -61,7 +61,7 @@
                                                 <textarea id="text" name="text" class="w-full bg-gray-100 dark:bg-gray-400 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:dark:bg-gray-400 focus:ring-2 focus:ring-indigo-200 focus:dark:ring-gray-50 h-32 text-base outline-none text-gray-700 dark:text-white py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out">Hello World</textarea>
                                             </div>
                                         </div>
-                                        <div class="p-2 w-full text-center">
+                                        <div class="p-2 w-full text-center mt-5">
                                             <label for="vol" class="col-3 font-weight-bold text-center dark:text-gray-200">
                                                 速度:
                                                 <span id="speedLabel">({{ old('speed', '1.0') }})</span></label>
