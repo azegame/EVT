@@ -17,7 +17,7 @@ rateInput.addEventListener('input', () => {
 
 speakBtn.addEventListener('click', () => {
     let btnText = document.querySelector('#speak-btn').textContent;
-    console.log(btnText);
+    document.querySelector('#stop-btn').innerHTML = '一時停止'
 
     const text = textElement.value;
 
@@ -36,7 +36,6 @@ speakBtn.addEventListener('click', () => {
         const rate = parseFloat(rateInput.value);
         uttr.rate = rate
 
-        //speechSynthesis.speak(uttr);
         //speechSynthesis.cancel();
         speechSynthesis.speak(uttr);
     })
@@ -44,7 +43,7 @@ speakBtn.addEventListener('click', () => {
 
 stopBtn.addEventListener('click', () => {
     let btnText = document.querySelector('#stop-btn').textContent;
-    console.log(btnText);
+
     if (btnText === '一時停止') {
         speechSynthesis.pause();
         document.querySelector('#stop-btn').innerHTML = '再開'
