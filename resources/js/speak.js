@@ -24,8 +24,10 @@ speakBtn.addEventListener('click', () => {
     const splitTextArr = text.split(/[,\.]/);
     console.log(splitTextArr);
 
+    speechSynthesis.cancel();
+
     splitTextArr.forEach(function (splitText) {
-        const uttr = new SpeechSynthesisUtterance(splitText.value)
+        const uttr = new SpeechSynthesisUtterance(splitText)
         console.log(splitText);
 
         uttr.voice = speechSynthesis
@@ -34,8 +36,9 @@ speakBtn.addEventListener('click', () => {
         const rate = parseFloat(rateInput.value);
         uttr.rate = rate
 
+        //speechSynthesis.speak(uttr);
         //speechSynthesis.cancel();
-        speechSynthesis.speak(uttr)
+        speechSynthesis.speak(uttr);
     })
 })
 
