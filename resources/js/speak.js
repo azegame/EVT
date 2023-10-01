@@ -1,4 +1,4 @@
-const text = document.querySelector('#text')
+const textElement = document.querySelector('#text')
 const speakBtn = document.querySelector('#speak-btn')
 const stopBtn = document.querySelector('#stop-btn')
 const rateInput = document.querySelector('#id_speed')
@@ -19,16 +19,24 @@ speakBtn.addEventListener('click', () => {
     let btnText = document.querySelector('#speak-btn').textContent;
     console.log(btnText);
 
-    const uttr = new SpeechSynthesisUtterance(text.value)
+    const text = textElement.value;
 
-    uttr.voice = speechSynthesis
-        .getVoices()
-        .filter((voice) => voice.name === "Google US English")[0]
-    const rate = parseFloat(rateInput.value);
-    uttr.rate = rate
+    const splitTextArr = text.split(/[,\.]/);
+    console.log(splitTextArr);
 
-    speechSynthesis.cancel();
-    speechSynthesis.speak(uttr)
+    splitTextArr.forEach(function (splitText) {
+        const uttr = new SpeechSynthesisUtterance(splitText.value)
+        console.log(splitText);
+
+        uttr.voice = speechSynthesis
+            .getVoices()
+            .filter((voice) => voice.name === "Google US English")[0]
+        const rate = parseFloat(rateInput.value);
+        uttr.rate = rate
+
+        //speechSynthesis.cancel();
+        speechSynthesis.speak(uttr)
+    })
 })
 
 stopBtn.addEventListener('click', () => {
