@@ -21,24 +21,34 @@ speakBtn.addEventListener('click', () => {
 
     const text = textElement.value;
 
-    const splitTextArr = text.split(/[,\.]/);
-    console.log(splitTextArr);
+    if (text.match(/[^\x01-\x7E\uFF61-\uFF9F]+/)) {
+        //全角文字
+        console.log(text.match(/[^\x01-\x7E\uFF61-\uFF9F]+/))
+        console.log("全角文字です");
+        alert('全角文字は入力できません。');
+    } else {
+        //全角文字以外
+        console.log("全角文字ではありません");
 
-    speechSynthesis.cancel();
+        const splitTextArr = text.split(/[,\.]/);
+        console.log(splitTextArr);
 
-    splitTextArr.forEach(function (splitText) {
-        const uttr = new SpeechSynthesisUtterance(splitText)
-        console.log(splitText);
+        speechSynthesis.cancel();
 
-        uttr.voice = speechSynthesis
-            .getVoices()
-            .filter((voice) => voice.name === "Google US English")[0]
-        const rate = parseFloat(rateInput.value);
-        uttr.rate = rate
+        splitTextArr.forEach(function (splitText) {
+            const uttr = new SpeechSynthesisUtterance(splitText)
+            console.log(splitText);
 
-        //speechSynthesis.cancel();
-        speechSynthesis.speak(uttr);
-    })
+            uttr.voice = speechSynthesis
+                .getVoices()
+                .filter((voice) => voice.name === "Google US English")[0]
+            const rate = parseFloat(rateInput.value);
+            uttr.rate = rate
+
+            //speechSynthesis.cancel();
+            speechSynthesis.speak(uttr);
+        })
+    }
 })
 
 stopBtn.addEventListener('click', () => {
