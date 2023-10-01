@@ -23,8 +23,6 @@ speakBtn.addEventListener('click', () => {
 
     if (text.match(/[^\x01-\x7E\uFF61-\uFF9F]+/)) {
         //全角文字
-        console.log(text.match(/[^\x01-\x7E\uFF61-\uFF9F]+/))
-        console.log("全角文字です");
         alert('全角文字は入力できません。');
     } else {
         //全角文字以外
