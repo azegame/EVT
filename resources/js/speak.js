@@ -16,7 +16,7 @@ rateInput.addEventListener('input', () => {
 });
 
 speakBtn.addEventListener('click', () => {
-    document.querySelector('#stop-btn').innerHTML = '一時停止';
+    document.querySelector('#stop-btn').innerHTML = '停止';
     const text = textElement.value;
 
     if (text.match(/[^\x01-\x7E\uFF61-\uFF9F]+/)) {
@@ -45,12 +45,12 @@ speakBtn.addEventListener('click', () => {
 stopBtn.addEventListener('click', () => {
     let btnText = document.querySelector('#stop-btn').textContent;
 
-    if (btnText === '一時停止') {
+    if (btnText === '停止') {
         speechSynthesis.pause();
         document.querySelector('#stop-btn').innerHTML = '再開';
     }
     if (btnText === '再開') {
         speechSynthesis.resume();
-        document.querySelector('#stop-btn').innerHTML = '一時停止';
+        document.querySelector('#stop-btn').innerHTML = '停止';
     }
 });

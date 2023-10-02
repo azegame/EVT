@@ -26,7 +26,7 @@
                                         <div class="mt-7"></div>
                                         <div class="flex justify-center space-x-4 mb-4">
                                             <button id="speak-btn" type="button" class="flex text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">再生</button>
-                                            <button id="stop-btn" type="button" class="flex text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">一時停止</button>
+                                            <button id="stop-btn" type="button" class="flex text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">停止</button>
                                         </div>
                                     </div>
                                 </div>

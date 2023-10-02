@@ -12,7 +12,7 @@ export default {
 
     theme: {
         screens: {
-            'sm': '830px',
+            'sm': '640px',
             extend: {
                 fontFamily: {
                     sans: ['Figtree', ...defaultTheme.fontFamily.sans],
