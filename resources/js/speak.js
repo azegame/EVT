@@ -30,7 +30,7 @@ speakBtn.addEventListener('click', () => {
 
         speechSynthesis.cancel();
 
-        splitTextArr.forEach(function (splitText) {
+        splitTextArr.forEach((splitText) => {
             const uttr = new SpeechSynthesisUtterance(splitText);
 
             uttr.voice = speechSynthesis.getVoices().filter((voice) => voice.name === "Google US English")[0];

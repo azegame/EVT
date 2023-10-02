@@ -1,3 +1,4 @@
+//保存したテキストをクリックした時にtextareaにテキストを挿入する処理
 document.addEventListener('DOMContentLoaded', function () {
     const links = document.querySelectorAll('.group');
     console.log(links[0]);
